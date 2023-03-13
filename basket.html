@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="basket.css">
+	<title>СТРОЙМАСТЕР</title>
+</head>
+<body>
+
+	<div class="header">
+		<div class="header_width_grid">
+			<div class="header_block">
+				<div class="logo"><a href="index.html"><img src="img/____________free-file (1) 1.png" alt="logo"></a></div>
+				<div class="menu">
+					<ul class="menu_ul_block">
+						<li class="menu_list_block"><a href="index.html" class="menu_link_block">Главная страница</a></li>
+						<li class="menu_list_block"><a href="katalog-tovarov.html" class="menu_link_block">Каталог товаров</a></li>
+						<li class="menu_list_block"><a href="index.html#page_contact" class="menu_link_block">Контакты</a></li>
+						<li class="menu_list_block"><a href="basket.html" class="menu_link_block">Корзина</a></li>
+					</ul>
+				</div>
+				<div class="login_register">
+					<ul class="login_register_ul_block">
+						<li class="login_register_list_block"><a href="login.html" class="login_register_link_block">Вход</a></li>
+						<li class="login_register_list_block"><a href="registration.html" class="login_register_link_block">Регистрация</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="basket_main_block">
+		<div class="basket_heading">
+			<h1>Корзина</h1>
+		</div>
+
+		<div class="basket_block">
+			<div class="basket_block_first">
+				<div class="item_main">
+					<img src="img/categoties/Rectangle 25.png" alt="">
+						<div class="basket_name_count">
+
+							<div class="basket_name">
+								<h2>Ламинат Kronotex Classic</h2>
+								<p id="product_price">1000</p>
+							</div>
+
+							<div class="basket_count">
+								<div class="basket_delete_item">
+									<img class="delete_photo" src="img/icons/Rectangle 35.png" alt=""><a class="delete" href="#"> Удалить</a>
+								</div>
+								<div class="basket_count_item">
+									<div class="count_item plus" id="product_count_plus"><img src="img/icons/Rectangle 33.png" alt=""></div>
+									<div class="count_item count" ><h2 id="product_count_sum"></h2></div>
+									<div class="count_item minus" id="product_count_minus"><img src="img/icons/Rectangle 32.png" alt=""></div>
+								</div>
+							</div>
+						</div>
+				</div>
+				
+			</div>
+
+			<div class="basket_block_second">
+				<h2 id="sum_total"></h2>
+				<p>Товаров</p>
+				<a href="">Оформить заказ</a>
+			</div>
+		</div>
+		
+	</div>
+
+
+	
+	<div class="footer">
+		<div class="footer_info_block">
+			<div class="footer_info_card">
+				<h1>О компании</h1>
+				<p>
+					СтройМастер - компания, 
+					специализирующаяся на продаже 
+					строительных материалов и товаров для ремонта. 
+					У нас вы найдете все необходимое для строительства 
+					и отделки вашего дома. Мы предлагаем только 
+					качественные товары от проверенных производителей.
+				</p>
+			</div>
+			<div class="footer_info_card">
+				<h1>Социальные сети</h1>
+				<p><a href="https://www.instagram.com/"target="_blank">Мы в Instagram</a></p>
+				<p><a href="https://ru-ru.facebook.com/"target="_blank">Мы в Facebook</a></p>
+				<p><a href="https://vk.com/"target="_blank">Мы в VK</a></p>
+			</div>
+			<div class="footer_info_card">
+				<h1>Контакты</h1>
+				<p>Адрес: ул. Строительная, д. 10, г. Москва</p>
+				<p>Телефон: <a href="tel:74951234567">+7 (495) 123-45-67</a></p>
+				<p>Email: <a href="mailto:info@stroymaster.ru">info@stroymaster.ru</a> </p>
+			</div>
+			<div class="footer_info_card">
+				<form action="">
+					<input class="input_email" type="text" placeholder="Введите ваш Email" required>
+					<button class="button_email">Подписаться на рассылку</button>
+				</form>
+				<p>
+					Оставьте свой email, чтобы получать информацию о новинках, 
+					скидках и акциях от нашей компании.
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+<script>
+	let count = 1;
+	const minus = document.getElementById('product_count_plus'); //кнопка минус
+	let sum = document.getElementById('product_count_sum');	//число 
+	const plus = document.getElementById('product_count_minus');//кнопка плюс
+	let price = document.getElementById('product_price'); //цена продукта
+	let total = document.getElementById('sum_total');// итоговая цена
+	const text_total = "Итого: ";
+	const text_rub = "₽";
+	plus.addEventListener('click', function(){
+		count++;
+		console.log(count);
+		sum.innerHTML = count;
+		total_refresh = total.innerHTML = text_total + price.innerHTML * count + text_rub;
+
+	})
+	minus.addEventListener('click', function(){
+		if(count < 2){
+
+		}
+		else{
+			count--;
+			console.log(count);
+			sum.innerHTML = count;
+			total_refresh = total.innerHTML = text_total + price.innerHTML * count + text_rub;
+		}
+		
+	})
+	sum.innerHTML = count;
+	total_refresh = total.innerHTML = text_total + price.innerHTML * count + text_rub;
+
+
+
+
+</script>
+</body>
+</html>
